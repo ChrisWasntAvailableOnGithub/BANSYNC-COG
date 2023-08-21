@@ -380,7 +380,7 @@ class BanSync(commands.Cog):
         """
         user = await self.bot.fetch_user(_id)
         audit_reason = (
-            f"{user} (ID {user.id}) | This user has been banned from the REPLACENAMEHERE Roleplay Community and our Network API. "
+            f"{user} (ID {user.id}) | This user has been banned from the ApolloMC and our Network API. "
             f"Reason: Globally banned by {mod} (ID {mod.id}). Reason: {reason}"
         )
         member: Optional[UserLike] = guild.get_member(_id)
@@ -635,7 +635,7 @@ class BanSync(commands.Cog):
             await ctx.bot.on_command_error(ctx, wrapped_error, unhandled_by_cog=True)
 
     @commands.command(name="mjolnir", aliases=["globalban", "gban"])
-    @commands.has_any_role("REPLACENAMEHERE | Owner", "REPLACENAMEHERE | Co-Owner", "REPLACENAMEHERE | Head of Management", "REPLACENAMEHERE | Management", "REPLACENAMEHERE | Junior Management", "REPLACENAMEHERE | Head Administrator", "CaliRP | CIA")
+    @commands.has_any_role("AMC | Owner", "AMC | Co-Owner", "AMC | Head of Management", "AMC | Management", "AMC | Trial Management", "AMC | Head Admin", "Apollo | Global Ban Perms")
     async def mjolnir(self, ctx, users: Greedy[MentionOrID], *, reason: str = "None Provided"):
         """
         Swing the heaviest of ban hammers
@@ -651,7 +651,7 @@ class BanSync(commands.Cog):
             await ctx.send("You are not worthy")
 
     @commands.command(name="unglobalban", aliases=["ungban"])
-    @commands.has_any_role("REPLACENAMEHERE | Owner", "REPLACENAMEHERE | Co-Owner", "REPLACENAMEHERE | Head of Management", "REPLACENAMEHERE | Management", "REPLACENAMEHERE | Junior Management", "CaliRP | CIA")
+    @commands.has_any_role("AMC | Owner", "AMC | Co-Owner", "AMC | Head of Management", "AMC | Management", "AMC | Trial Management", "Apollo | Global Ban Perms")
     async def unglobalban(self, ctx, users: Greedy[MentionOrID], *, reason: str = "None Provided"):
         """
         To issue forgiveness.
