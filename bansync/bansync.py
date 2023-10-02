@@ -380,7 +380,7 @@ class BanSync(commands.Cog):
         """
         user = await self.bot.fetch_user(_id)
         audit_reason = (
-            f"{user} (ID {user.id}) | This user has been banned from the ApolloMC and our Network API. "
+            f"{user} (ID {user.id}) | This user has been banned from the Apollo By Chris API. "
             f"Reason: Globally banned by {mod} (ID {mod.id}). Reason: {reason}"
         )
         member: Optional[UserLike] = guild.get_member(_id)
